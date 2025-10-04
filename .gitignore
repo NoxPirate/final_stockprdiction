@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+env/
+*.egg-info/
+dist/
+build/
+wheels/
+MANIFEST.in
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Django stuff:
+*.log
+*.pot
+*.sqlite3
+/media/
+/static/
+
+# Translations:
+/*.mo
+
+# Temporary files:
+*~
+\#*
+.*.swp
+.DS_Store
+
+# IntelliJ
+.idea/
