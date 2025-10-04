@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - Stock Prediction Website</title>
+    <style>
+        /* Resetting default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Setting up the body */
+        body {
+    font-family: 'Times New Roman', serif;
+    background-image: url('C:\\Users\\hrish\\OneDrive\\Documents\\Desktop\\stockpr-main\\stockpr-main\\static\\images\\faqs.jpg'); /* Background image */
+    background-size: auto; /* Use auto to maintain image size */
+    background-repeat: repeat; /* Repeat the image */
+    background-position: top left; /* Position at the top left */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    text-align: center;
+}
+
+
+        /* Container for FAQs */
+        .faq-container {
+            background-color: maroon; /* Maroon background for the container */
+            opacity: 0.9; /* Slight transparency for the background */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            width: 80%; /* Responsive width */
+            max-width: 800px; /* Maximum width */
+            margin: 40px; /* Margin for spacing */
+            margin-bottom: 30px;
+        }
+
+        /* Individual FAQ styles */
+        .faq {
+            margin-bottom: 50px;
+            cursor: pointer; /* Change cursor on hover */
+        }
+
+        .faq h3 {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .faq p {
+            display: none; /* Initially hide the answer */
+            font-size: 1rem;
+            padding: 10px;
+            border-top: 5px solid #ddd; /* Separator for answer */
+        }
+
+        /* Button styles */
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color:#313e65; /* Button color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: black; /* Darker color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="faq-container">
+        <h1>Frequently Asked Questions</h1>
+        
+        <div class="faq">
+            <h3 onclick="toggleAnswer(this)">1. How does the stock prediction work?</h3>
+            <p>The stock prediction uses historical data and machine learning algorithms to analyze market trends and forecast future stock prices.</p>
+        </div>
+        
+        <div class="faq">
+            <h3 onclick="toggleAnswer(this)">2. What data is used for predictions?</h3>
+            <p>We utilize historical stock prices, trading volumes, market sentiment, and other relevant financial indicators to generate predictions.</p>
+        </div>
+        
+        <div class="faq">
+            <h3 onclick="toggleAnswer(this)">3. Is the prediction always accurate?</h3>
+            <p>No prediction is guaranteed. While our algorithms aim to provide accurate forecasts, stock markets are influenced by many unpredictable factors.</p>
+        </div>
+        
+        <div class="faq">
+            <h3 onclick="toggleAnswer(this)">4. What is stock market prediction?</h3>
+            <p>Stock market prediction involves using historical data, market trends, and statistical techniques to forecast future price movements of stocks.</p>
+        </div>
+
+        <div class="faq">
+            <h3 onclick="toggleAnswer(this)">5. How reliable are your predictions?</h3>
+            <p>Our predictions are based on advanced algorithms and historical data analysis. While they provide insights, we cannot guarantee accuracy due to the unpredictable nature of the stock market.</p>
+        </div>
+
+        <div class="faq">
+            <h3 onclick="toggleAnswer(this)">6. Do I need to have prior knowledge of stocks to use this service?</h3>
+            <p>No prior knowledge is required. Our platform is designed to be user-friendly, providing insights that can help both beginners and experienced investors.</p>
+        </div>
+
+        <div class="faq">
+            <h3 onclick="toggleAnswer(this)">7. What tools do you provide for analyzing stocks?</h3>
+            <p>We offer various tools such as trend analysis charts, historical data comparison, and performance indicators to help users make informed decisions.</p>
+        </div>
+
+        <div class="faq">
+            <h3 onclick="toggleAnswer(this)">8. Can I customize the predictions for specific stocks?</h3>
+            <p>Yes, our platform allows users to customize their preferences and focus on specific stocks or sectors of interest.</p>
+        </div>
+
+        <div class="faq">
+            <h3 onclick="toggleAnswer(this)">9. Is there a subscription fee for using your services?</h3>
+            <p>We offer both free and premium subscription options. The premium service provides access to advanced features and more detailed predictions.</p>
+        </div>
+
+        <div class="faq">
+            <h3 onclick="toggleAnswer(this)">10. How do I interpret the predictions?</h3>
+            <p>Each prediction comes with a confidence score and historical context to help you understand its reliability. We also provide tutorials on how to interpret the data effectively.</p>
+        </div>
+
+        <div class="faq">
+            <h3 onclick="toggleAnswer(this)">11. What happens if I lose money based on your predictions?</h3>
+            <p>While we strive to provide accurate forecasts, investing in stocks carries inherent risks. We recommend diversifying your investments and seeking advice from financial experts.</p>
+        </div>
+
+        <div class="faq">
+            <h3 onclick="toggleAnswer(this)">12. Are your predictions based on technical or fundamental analysis?</h3>
+            <p>Our predictions utilize a combination of both technical and fundamental analysis to provide a more comprehensive view of stock performance.</p>
+        </div>
+
+        <div class="faq">
+            <h3 onclick="toggleAnswer(this)">13. Can I access the predictions on my mobile device?</h3>
+            <p>Yes, our website is mobile-responsive, allowing you to access predictions and tools from your smartphone or tablet.</p>
+        </div>
+
+        <div class="button-container">
+            <a href="http://localhost:8503" class="btn">Have more questions?</a>
+            <a href="dashboard.html" class="btn">Back to Home Page</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleAnswer(faqElement) {
+            const answer = faqElement.nextElementSibling;
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

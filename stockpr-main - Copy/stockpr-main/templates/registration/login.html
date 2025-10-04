@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        /* Resetting some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        /* Setting up the body */
+        body {
+            font-family: 'Times New Roman', serif;
+            background-image: url('regis.jpg'); /* Overlay the background image */
+            background-repeat: repeat; /* Do not repeat the image */
+            background-size: absolute; /* Cover the entire viewport */
+            background-position: center center; /* Center the image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+    
+        /* Container for the login box */
+        .container {
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background for the form */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+            width: 350px;
+            text-align: center;
+        }
+    
+        /* Styling for the heading */
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+    
+        /* Styling for inputs and select fields */
+        select, 
+        input[type="text"], 
+        input[type="password"], 
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+    
+        /* Submit button styling */
+        input[type="submit"] {
+            background-color: #ff7f50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+    
+        /* Submit button hover effect */
+        input[type="submit"]:hover {
+            background-color: #ff4500;
+        }
+    
+        /* Link styling */
+        a {
+            color: #ffd45f;
+            text-decoration: none;
+        }
+    
+        /* Link hover effect */
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form action="../core/dashboard.html" method="post">
+            <select name="userType" required>
+                <option value="" disabled selected>Select User Type</option>
+                <option value="user">User</option>
+                <option value="broker">Broker</option>
+            </select>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+        <p><a href="register.html">Don't have an account, Register</a></p>
+    </div>
+</body>
+</html>

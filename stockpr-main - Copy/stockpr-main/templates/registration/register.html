@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <style>
+        /* Resetting default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            background-image: url('regis.jpg'); /* Background image */
+            background-repeat: no-repeat;
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+            width: 350px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        select, 
+        input[type="text"], 
+        input[type="password"], 
+        input[type="email"], 
+        input[type="tel"], 
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        input[type="submit"] {
+            background-color: #ff7f50; /* Coral color for the button */
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: orange; /* Darker color on hover */
+        }
+
+        a {
+            color: #ffd45f;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <!-- Updated action to redirect to login.html -->
+        <form action="login.html" method="post" onsubmit="return validateForm()">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+            <input type="password" name="password" placeholder="Password" required id="password" minlength="8" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%?&])[A-Za-z\d@$!%?&]{8,}">
+            <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9]{10}">
+            <select name="registerAs" required>
+                <option value="" disabled selected>Register as</option>
+                <option value="user">User</option>
+                <option value="broker">Broker</option>
+            </select>
+            <input type="submit" value="Register">
+        </form>
+        <p><a href="login.html">Already have an Account, Login</a></p>
+    </div>
+
+    <script>
+        // Function to validate the password strength
+        function validateForm() {
+            const password = document.getElementById('password').value;
+            const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%?&])[A-Za-z\d@$!%?&]{8,}$/;
+
+            if (!passwordPattern.test(password)) {
+                alert("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
