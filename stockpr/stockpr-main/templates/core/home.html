@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero-wrapper"
+  style="background: linear-gradient(to bottom, rgba(5,5,8,0.4), var(--bg-primary)), url('{{ url_for('static', filename='images/header.png') }}') center/cover;">
+  <h1 class="hero-title">Stock <span class="text-gradient">Market Talkies</span></h1>
+  <p class="hero-subtitle">Simplify your trading journey. AI-powered predictions, advanced charting, and modern
+    analytics designed for the future of finance.</p>
+
+  <div class="hero-actions"
+    style="margin-top: 30px; max-width: 1000px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+    {% if not user %}
+    <button class="btn-glowing btn-primary" onclick="window.location.href='{{ url_for('login') }}'">Login as
+      Broker</button>
+    <button class="btn-glowing btn-secondary" onclick="window.location.href='{{ url_for('login') }}'">Login as
+      User</button>
+    <button class="btn-glowing btn-secondary" onclick="window.location.href='{{ url_for('register') }}'">Register
+      Now</button>
+    {% else %}
+    <button class="btn-glowing btn-primary" onclick="window.location.href='http://localhost:8501'"><i
+        class="fa-solid fa-chart-line"></i> Predict Stocks</button>
+    <button class="btn-glowing btn-primary" onclick="window.location.href='http://localhost:8502'"><i
+        class="fa-solid fa-money-bill-trend-up"></i> Mutual Funds</button>
+    <button class="btn-glowing btn-secondary" onclick="window.location.href='{{ url_for('cryptocurrency') }}'"><i
+        class="fa-brands fa-bitcoin"></i> Crypto</button>
+    <button class="btn-glowing btn-secondary" onclick="window.location.href='{{ url_for('academy') }}'"><i
+        class="fa-solid fa-graduation-cap"></i> Academy</button>
+    <button class="btn-glowing btn-secondary" onclick="window.location.href='http://localhost:8503'"><i
+        class="fa-solid fa-robot"></i> AI Bot</button>
+    <button class="btn-glowing btn-secondary" onclick="window.location.href='{{ url_for('calculator') }}'"><i
+        class="fa-solid fa-calculator"></i> SPI/EMI</button>
+    <button class="btn-glowing btn-secondary" onclick="window.location.href='{{ url_for('faq') }}'"><i
+        class="fa-solid fa-circle-question"></i> FAQs</button>
+    <button class="btn-glowing btn-secondary" style="border-color: var(--accent-pink); color: var(--accent-pink);"
+      onclick="window.location.href='{{ url_for('logout') }}'"><i class="fa-solid fa-right-from-bracket"></i> Log
+      Out</button>
+    {% endif %}
+  </div>
+
+  <!-- Ticker Tape Widget -->
+  <div class="tv-widget-box" style="width: 100%; border-radius: 0; margin-bottom: 0;">
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+        async>
+          {
+            "symbols": [
+              { "description": "TESLA", "proName": "NASDAQ:TSLA" },
+              { "description": "NVIDIA", "proName": "NASDAQ:NVDA" },
+              { "description": "APPLE", "proName": "NASDAQ:AAPL" },
+              { "description": "MICROSOFT", "proName": "NASDAQ:MSFT" },
+              { "description": "AMAZON", "proName": "NASDAQ:AMZN" }
+            ],
+              "showSymbolLogo": true,
+                "isTransparent": true,
+                  "displayMode": "regular",
+                    "colorTheme": "dark",
+                      "locale": "en"
+          }
+        </script>
+    </div>
+  </div>
+</div>
+
+<!-- Collage Section -->
+<div class="section-container">
+  <h2 class="section-title">Market <span class="text-gradient">Pulse</span></h2>
+  <div class="hero-collage">
+    <img src="{{ url_for('static', filename='images/1.jpg') }}" alt="Bull Market">
+    <img src="{{ url_for('static', filename='images/2.jpg') }}" alt="Trading Data">
+    <img src="{{ url_for('static', filename='images/3.jpg') }}" alt="Trader Desk">
+    <img src="{{ url_for('static', filename='images/4.jpg') }}" alt="Financial Network">
+    <img src="{{ url_for('static', filename='images/5.jpg') }}" alt="Financial Growth">
+    <img src="{{ url_for('static', filename='images/6.jpg') }}" alt="Stock Ticker">
+  </div>
+</div>
+
+<!-- About Section -->
+<div class="section-container">
+  <div class="about-box glass-panel">
+    <div class="about-text">
+      <h2 class="section-title" style="text-align: left;">Why <span class="text-gradient">Dalal Street Talkies?</span>
+      </h2>
+      <p>At Dalal Street Talkies, we're reinventing stock market predictions with a fresh, user-friendly approach. Our
+        platform is designed with the modern investor in mind, breaking down complex jargon into clear, actionable
+        insights.</p>
+      <p>By blending advanced algorithms, real-time data, and stunning visual tools, we make investing accessible and
+        engaging for everyone. Join us and trade with confidence.</p>
+    </div>
+    <div>
+      <img src="{{ url_for('static', filename='images/side.png') }}" class="about-img" alt="Professional Analytics">
+    </div>
+  </div>
+</div>
+
+<!-- Timeline & Overview Section -->
+<div class="section-container">
+  <h2 class="section-title">Stock <span class="text-gradient">Overview</span></h2>
+  <p style="text-align:center; color: var(--text-muted); margin-bottom: 2rem;">Log in to unlock crystal-clear views of
+    Top Stocks</p>
+
+  <div class="tv-widget-box {% if not user %}blurred{% endif %}">
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js"
+        async>
+          {
+            "symbols": [
+              ["Apple", "AAPL|1D"],
+              ["Google", "GOOGL|1D"],
+              ["Microsoft", "MSFT|1D"],
+              ["Tesla", "NASDAQ:TSLA|1D"],
+              ["Amazon", "NASDAQ:AMZN|1D"]
+            ],
+              "chartOnly": false,
+                "width": "100%",
+                  "height": "550",
+                    "locale": "en",
+                      "colorTheme": "dark",
+                        "autosize": false,
+                          "showVolume": false,
+                            "showMA": false,
+                              "hideDateRanges": false,
+                                "hideMarketStatus": false,
+                                  "scalePosition": "right",
+                                    "scaleMode": "Normal",
+                                      "fontFamily": "Outfit, sans-serif",
+                                        "fontSize": "12",
+                                          "noTimeScale": false,
+                                            "valuesTracking": "1",
+                                              "changeMode": "price-and-percent",
+                                                "chartType": "area",
+                                                  "lineWidth": 2,
+                                                    "lineType": 0,
+                                                      "dateRanges": ["1d|1", "1m|30", "3m|60", "12m|1D", "60m|1W", "all|1M"]
+          }
+        </script>
+    </div>
+  </div>
+</div>
+{% endblock %}

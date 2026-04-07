@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dalal Street Talkies | Premium Analytics</title>
+    
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link rel="icon" href="https://res.cloudinary.com/ds2uw5gcw/image/upload/v1712660151/Trade_Pulse_ico_cjjdf5.png" type="image/x-icon">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    
+</head>
+<body>
+    
+    <div class="navbar-wrapper">
+        <div class="navb glass-panel">
+            <div class="nav-left">
+                <span class="navbar-link"><a href="/">Home</a></span>
+                <span class="navbar-link"><a href="/cryptocurrency">Cryptocurrency</a></span>
+                <span class="navbar-link"><a href="/academy">Academy</a></span>
+            </div>
+            
+            <div class="nav-logo">
+                <a href="/">
+                    <img src="https://res.cloudinary.com/ds2uw5gcw/image/upload/v1725179199/stockpulselogo_wdhb55.png" alt="Logo">
+                </a>
+            </div>
+            
+            <div class="nav-right">
+                <span class="navbar-link"><a href="http://127.0.0.1:5500/news.html">News</a></span>
+                <span class="navbar-link">
+                    <a href="#">Finance <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown">
+                        <ul>
+                            <li><a href="/calculator">Calculator</a></li>
+                            <li><a href="https://www.policybazaar.com/">Insurance</a></li>
+                            <li><a href="https://coin.zerodha.com/mf">Mutual Funds</a></li>
+                            <li><a href="https://sbi.co.in/web/personal-banking/loans/personal-loans">Loan</a></li>
+                        </ul>
+                    </div>
+                </span>
+                
+                
+                <span class="navbar-link">
+                    <a href="#" style="color: var(--accent-cyan);"><i class="fa-solid fa-user"></i> ritikk</a>
+                    <div class="dropdown">
+                        <ul>
+                            <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                </span>
+                
+            </div>
+        </div>
+    </div>
+    
+
+    
+<!-- Hero Section -->
+<div class="hero-wrapper" style="background: linear-gradient(to bottom, rgba(5,5,8,0.4), var(--bg-primary)), url('/static/images/header.png') center/cover;">
+  <h1 class="hero-title">Dalal <span class="text-gradient">Street Talkies</span></h1>
+  <p class="hero-subtitle">Simplify your trading journey. AI-powered predictions, advanced charting, and modern analytics designed for the future of finance.</p>
+  
+  <div class="hero-actions">
+    
+      <button class="btn-glowing btn-primary" onclick="window.location.href='http://localhost:8501'">Predict Your Stocks</button>
+    
+  </div>
+
+  <!-- Ticker Tape Widget -->
+  <div class="tv-widget-box" style="width: 100%; border-radius: 0; margin-bottom: 0;">
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+      {
+        "symbols": [
+          {"description": "TESLA", "proName": "NASDAQ:TSLA"},
+          {"description": "NVIDIA", "proName": "NASDAQ:NVDA"},
+          {"description": "APPLE", "proName": "NASDAQ:AAPL"},
+          {"description": "MICROSOFT", "proName": "NASDAQ:MSFT"},
+          {"description": "AMAZON", "proName": "NASDAQ:AMZN"}
+        ],
+        "showSymbolLogo": true,
+        "isTransparent": true,
+        "displayMode": "regular",
+        "colorTheme": "dark",
+        "locale": "en"
+      }
+      </script>
+    </div>
+  </div>
+</div>
+
+<!-- Collage Section -->
+<div class="section-container">
+  <h2 class="section-title">Market <span class="text-gradient">Pulse</span></h2>
+  <div class="hero-collage">
+    <img src="/static/images/1.jpg" alt="Bull Market">
+    <img src="/static/images/2.jpg" alt="Trading Data">
+    <img src="/static/images/3.jpg" alt="Trader Desk">
+    <img src="/static/images/4.jpg" alt="Financial Network">
+    <img src="/static/images/5.jpg" alt="Financial Growth">
+    <img src="/static/images/6.jpg" alt="Stock Ticker">
+  </div>
+</div>
+
+<!-- About Section -->
+<div class="section-container">
+  <div class="about-box glass-panel">
+    <div class="about-text">
+      <h2 class="section-title" style="text-align: left;">Why <span class="text-gradient">Dalal Street Talkies?</span></h2>
+      <p>At Dalal Street Talkies, we're reinventing stock market predictions with a fresh, user-friendly approach. Our platform is designed with the modern investor in mind, breaking down complex jargon into clear, actionable insights.</p>
+      <p>By blending advanced algorithms, real-time data, and stunning visual tools, we make investing accessible and engaging for everyone. Join us and trade with confidence.</p>
+    </div>
+    <div>
+      <img src="/static/images/side.png" class="about-img" alt="Professional Analytics">
+    </div>
+  </div>
+</div>
+
+<!-- Timeline & Overview Section -->
+<div class="section-container">
+  <h2 class="section-title">Stock <span class="text-gradient">Overview</span></h2>
+  <p style="text-align:center; color: var(--text-muted); margin-bottom: 2rem;">Log in to unlock crystal-clear views of Top Stocks</p>
+
+  <div class="tv-widget-box ">
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
+      {
+        "symbols": [
+          ["Apple", "AAPL|1D"],
+          ["Google", "GOOGL|1D"],
+          ["Microsoft", "MSFT|1D"],
+          ["Tesla", "NASDAQ:TSLA|1D"],
+          ["Amazon", "NASDAQ:AMZN|1D"]
+        ],
+        "chartOnly": false,
+        "width": "100%",
+        "height": "550",
+        "locale": "en",
+        "colorTheme": "dark",
+        "autosize": false,
+        "showVolume": false,
+        "showMA": false,
+        "hideDateRanges": false,
+        "hideMarketStatus": false,
+        "scalePosition": "right",
+        "scaleMode": "Normal",
+        "fontFamily": "Outfit, sans-serif",
+        "fontSize": "12",
+        "noTimeScale": false,
+        "valuesTracking": "1",
+        "changeMode": "price-and-percent",
+        "chartType": "area",
+        "lineWidth": 2,
+        "lineType": 0,
+        "dateRanges": ["1d|1", "1m|30", "3m|60", "12m|1D", "60m|1W", "all|1M"]
+      }
+      </script>
+    </div>
+  </div>
+</div>
+
+
+    
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4 class="text-gradient">Dalal Street Talkies</h4>
+                <p>Advanced predictive analytics for the modern stock market. Experience the pulse of global trading.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Products</h4>
+                <a href="#">Stock Forecasting</a>
+                <a href="#">Algorithmic Trading</a>
+                <a href="#">Advanced Charting</a>
+                <a href="#">Stock Screener</a>
+            </div>
+            <div class="footer-col">
+                <h4>Links</h4>
+                <a href="#">Pricing</a>
+                <a href="#">Help & Support</a>
+                <a href="/faq">FAQs</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p><i class="fa fa-envelope"></i> support@dalalstreettalkies.com</p>
+                <p><i class="fa fa-phone"></i> +91-595318359</p>
+                
+                <div style="margin-top: 15px; font-size: 1.5rem;">
+                    <a href="#" style="display:inline-block; margin-right:15px;"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" style="display:inline-block; margin-right:15px;"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" style="display:inline-block;"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 40px; color: var(--text-muted); border-top: 1px solid var(--glass-border); padding-top: 20px;">
+            &copy; 2026 Dalal Street Talkies. All rights reserved.
+        </div>
+    </footer>
+    
+</body>
+</html>

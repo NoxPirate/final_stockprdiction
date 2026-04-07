@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="hero-wrapper" style="min-height: 80vh; background: linear-gradient(to bottom, rgba(5,5,8,0.7), var(--bg-primary)), url('{{ url_for('static', filename='images/header.png') }}') center/cover;">
+  <h1 class="hero-title" style="margin-bottom: 20px;">Frequently Asked <span class="text-gradient">Questions</span></h1>
+  <p class="hero-subtitle">Find answers to the most common questions about our platform and services.</p>
+
+  <div class="glass-panel" style="max-width: 800px; width: 100%; margin: 20px auto; padding: 40px; text-align: left;">
+    
+    <div class="faq" style="margin-bottom: 20px; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;">
+        <h3 onclick="toggleAnswer(this)" style="font-size: 1.2rem; cursor: pointer; color: var(--text-main); font-weight: 500; display: flex; justify-content: space-between;">
+            1. How does the stock prediction work? <i class="fa fa-chevron-down" style="color: var(--accent-cyan); font-size: 1rem;"></i>
+        </h3>
+        <p style="display: none; color: var(--text-muted); margin-top: 15px; padding-left: 10px;">The stock prediction uses historical data and machine learning algorithms to analyze market trends and forecast future stock prices.</p>
+    </div>
+    
+    <div class="faq" style="margin-bottom: 20px; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;">
+        <h3 onclick="toggleAnswer(this)" style="font-size: 1.2rem; cursor: pointer; color: var(--text-main); font-weight: 500; display: flex; justify-content: space-between;">
+            2. What data is used for predictions? <i class="fa fa-chevron-down" style="color: var(--accent-cyan); font-size: 1rem;"></i>
+        </h3>
+        <p style="display: none; color: var(--text-muted); margin-top: 15px; padding-left: 10px;">We utilize historical stock prices, trading volumes, market sentiment, and other relevant financial indicators to generate predictions.</p>
+    </div>
+    
+    <div class="faq" style="margin-bottom: 20px; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;">
+        <h3 onclick="toggleAnswer(this)" style="font-size: 1.2rem; cursor: pointer; color: var(--text-main); font-weight: 500; display: flex; justify-content: space-between;">
+            3. Is the prediction always accurate? <i class="fa fa-chevron-down" style="color: var(--accent-cyan); font-size: 1rem;"></i>
+        </h3>
+        <p style="display: none; color: var(--text-muted); margin-top: 15px; padding-left: 10px;">No prediction is guaranteed. While our algorithms aim to provide accurate forecasts, stock markets are influenced by many unpredictable factors.</p>
+    </div>
+    
+    <div class="faq" style="margin-bottom: 20px; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;">
+        <h3 onclick="toggleAnswer(this)" style="font-size: 1.2rem; cursor: pointer; color: var(--text-main); font-weight: 500; display: flex; justify-content: space-between;">
+            4. What is stock market prediction? <i class="fa fa-chevron-down" style="color: var(--accent-cyan); font-size: 1rem;"></i>
+        </h3>
+        <p style="display: none; color: var(--text-muted); margin-top: 15px; padding-left: 10px;">Stock market prediction involves using historical data, market trends, and statistical techniques to forecast future price movements of stocks.</p>
+    </div>
+
+    <div class="faq" style="margin-bottom: 20px; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;">
+        <h3 onclick="toggleAnswer(this)" style="font-size: 1.2rem; cursor: pointer; color: var(--text-main); font-weight: 500; display: flex; justify-content: space-between;">
+            5. How reliable are your predictions? <i class="fa fa-chevron-down" style="color: var(--accent-cyan); font-size: 1rem;"></i>
+        </h3>
+        <p style="display: none; color: var(--text-muted); margin-top: 15px; padding-left: 10px;">Our predictions are based on advanced algorithms and historical data analysis. While they provide insights, we cannot guarantee accuracy due to the unpredictable nature of the stock market.</p>
+    </div>
+
+    <div class="faq" style="margin-bottom: 20px; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;">
+        <h3 onclick="toggleAnswer(this)" style="font-size: 1.2rem; cursor: pointer; color: var(--text-main); font-weight: 500; display: flex; justify-content: space-between;">
+            6. Do I need to have prior knowledge of stocks to use this service? <i class="fa fa-chevron-down" style="color: var(--accent-cyan); font-size: 1rem;"></i>
+        </h3>
+        <p style="display: none; color: var(--text-muted); margin-top: 15px; padding-left: 10px;">No prior knowledge is required. Our platform is designed to be user-friendly, providing insights that can help both beginners and experienced investors.</p>
+    </div>
+
+    <div class="faq" style="margin-bottom: 20px; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;">
+        <h3 onclick="toggleAnswer(this)" style="font-size: 1.2rem; cursor: pointer; color: var(--text-main); font-weight: 500; display: flex; justify-content: space-between;">
+            7. What tools do you provide for analyzing stocks? <i class="fa fa-chevron-down" style="color: var(--accent-cyan); font-size: 1rem;"></i>
+        </h3>
+        <p style="display: none; color: var(--text-muted); margin-top: 15px; padding-left: 10px;">We offer various tools such as trend analysis charts, historical data comparison, and performance indicators to help users make informed decisions.</p>
+    </div>
+
+    <div class="faq" style="margin-bottom: 20px; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;">
+        <h3 onclick="toggleAnswer(this)" style="font-size: 1.2rem; cursor: pointer; color: var(--text-main); font-weight: 500; display: flex; justify-content: space-between;">
+            8. Can I customize the predictions for specific stocks? <i class="fa fa-chevron-down" style="color: var(--accent-cyan); font-size: 1rem;"></i>
+        </h3>
+        <p style="display: none; color: var(--text-muted); margin-top: 15px; padding-left: 10px;">Yes, our platform allows users to customize their preferences and focus on specific stocks or sectors of interest.</p>
+    </div>
+
+    <div class="faq" style="margin-bottom: 20px; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;">
+        <h3 onclick="toggleAnswer(this)" style="font-size: 1.2rem; cursor: pointer; color: var(--text-main); font-weight: 500; display: flex; justify-content: space-between;">
+            9. Is there a subscription fee for using your services? <i class="fa fa-chevron-down" style="color: var(--accent-cyan); font-size: 1rem;"></i>
+        </h3>
+        <p style="display: none; color: var(--text-muted); margin-top: 15px; padding-left: 10px;">We offer both free and premium subscription options. The premium service provides access to advanced features and more detailed predictions.</p>
+    </div>
+
+    <div class="faq" style="margin-bottom: 20px; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;">
+        <h3 onclick="toggleAnswer(this)" style="font-size: 1.2rem; cursor: pointer; color: var(--text-main); font-weight: 500; display: flex; justify-content: space-between;">
+            10. How do I interpret the predictions? <i class="fa fa-chevron-down" style="color: var(--accent-cyan); font-size: 1rem;"></i>
+        </h3>
+        <p style="display: none; color: var(--text-muted); margin-top: 15px; padding-left: 10px;">Each prediction comes with a confidence score and historical context to help you understand its reliability. We also provide tutorials on how to interpret the data effectively.</p>
+    </div>
+
+    <div class="faq" style="margin-bottom: 20px; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;">
+        <h3 onclick="toggleAnswer(this)" style="font-size: 1.2rem; cursor: pointer; color: var(--text-main); font-weight: 500; display: flex; justify-content: space-between;">
+            11. Are your predictions based on technical or fundamental analysis? <i class="fa fa-chevron-down" style="color: var(--accent-cyan); font-size: 1rem;"></i>
+        </h3>
+        <p style="display: none; color: var(--text-muted); margin-top: 15px; padding-left: 10px;">Our predictions utilize a combination of both technical and fundamental analysis to provide a more comprehensive view of stock performance.</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <p style="margin-bottom: 20px; color: var(--text-muted);">Can't find the answer you're looking for?</p>
+        <button class="btn-glowing btn-primary" onclick="window.location.href='http://localhost:8503'">Ask our AI Assistant</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+    function toggleAnswer(faqElement) {
+        const answer = faqElement.nextElementSibling;
+        const icon = faqElement.querySelector('i');
+        if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+            icon.className = 'fa fa-chevron-down';
+            faqElement.style.color = 'var(--text-main)';
+        } else {
+            answer.style.display = 'block';
+            icon.className = 'fa fa-chevron-up';
+            faqElement.style.color = 'var(--accent-cyan)';
+        }
+    }
+</script>
+{% endblock %}

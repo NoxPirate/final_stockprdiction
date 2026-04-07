@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dalal Street Talkies | Premium Analytics</title>
+    
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link rel="icon" href="https://res.cloudinary.com/ds2uw5gcw/image/upload/v1712660151/Trade_Pulse_ico_cjjdf5.png" type="image/x-icon">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    {% block head %}{% endblock %}
+</head>
+<body>
+    {% if show_navbar != false %}
+    <div class="navbar-wrapper">
+        <div class="navb glass-panel">
+            <div class="nav-left">
+                <span class="navbar-link"><a href="{{ url_for('home') }}">Home</a></span>
+                <span class="navbar-link"><a href="{{ url_for('cryptocurrency') }}">Cryptocurrency</a></span>
+                <span class="navbar-link"><a href="{{ url_for('academy') }}">Academy</a></span>
+            </div>
+            
+            <div class="nav-logo">
+                <a href="{{ url_for('home') }}">
+                    <img src="https://res.cloudinary.com/ds2uw5gcw/image/upload/v1725179199/stockpulselogo_wdhb55.png" alt="Logo">
+                </a>
+            </div>
+            
+            <div class="nav-right">
+                <span class="navbar-link"><a href="http://127.0.0.1:5500/news.html">News</a></span>
+                <span class="navbar-link">
+                    <a href="#">Finance <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown">
+                        <ul>
+                            <li><a href="{{ url_for('calculator') }}">Calculator</a></li>
+                            <li><a href="https://www.policybazaar.com/">Insurance</a></li>
+                            <li><a href="https://coin.zerodha.com/mf">Mutual Funds</a></li>
+                            <li><a href="https://sbi.co.in/web/personal-banking/loans/personal-loans">Loan</a></li>
+                        </ul>
+                    </div>
+                </span>
+                
+                {% if user %}
+                <span class="navbar-link">
+                    <a href="#" style="color: var(--accent-cyan);"><i class="fa-solid fa-user"></i> {{ user }}</a>
+                    <div class="dropdown">
+                        <ul>
+                            <li><a href="{{ url_for('logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                </span>
+                {% else %}
+                <span class="navbar-link"><a class="login-button" href="{{ url_for('login') }}">Sign In <i class="fa-solid fa-right-to-bracket"></i></a></span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% if show_footer != false %}
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4 class="text-gradient">Dalal Street Talkies</h4>
+                <p>Advanced predictive analytics for the modern stock market. Experience the pulse of global trading.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Products</h4>
+                <a href="#">Stock Forecasting</a>
+                <a href="#">Algorithmic Trading</a>
+                <a href="#">Advanced Charting</a>
+                <a href="#">Stock Screener</a>
+            </div>
+            <div class="footer-col">
+                <h4>Links</h4>
+                <a href="#">Pricing</a>
+                <a href="#">Help & Support</a>
+                <a href="{{ url_for('faq') }}">FAQs</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p><i class="fa fa-envelope"></i> support@dalalstreettalkies.com</p>
+                <p><i class="fa fa-phone"></i> +91-595318359</p>
+                
+                <div style="margin-top: 15px; font-size: 1.5rem;">
+                    <a href="#" style="display:inline-block; margin-right:15px;"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" style="display:inline-block; margin-right:15px;"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" style="display:inline-block;"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 40px; color: var(--text-muted); border-top: 1px solid var(--glass-border); padding-top: 20px;">
+            &copy; 2026 Dalal Street Talkies. All rights reserved.
+        </div>
+    </footer>
+    {% endif %}
+</body>
+</html>

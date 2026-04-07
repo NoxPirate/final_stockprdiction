@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="hero-wrapper"
+  style="background: linear-gradient(to bottom, rgba(5,5,8,0.7), var(--bg-primary)), url('{{ url_for('static', filename='images/header.png') }}') center/cover;">
+  <h1 class="hero-title">Stock Market <span class="text-gradient">Academy</span></h1>
+  <p class="hero-subtitle">Learn the best strategies from top creators, podcasts, and books.</p>
+</div>
+
+<div class="section-container">
+  <h2 class="section-title">Video <span class="text-gradient">Courses</span></h2>
+
+  <div class="dashboard-grid" style="gap: 20px;">
+    <!-- Stocks -->
+    <div class="glass-panel" style="padding: 20px; text-align: center;">
+      <h3 style="margin-bottom: 15px; color: var(--accent-cyan);">Stocks Basics</h3>
+      <iframe width="100%" height="200" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"
+        src="https://www.youtube.com/embed/qdV7Q1ElI8Y?rel=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <!-- Mutual Funds -->
+    <div class="glass-panel" style="padding: 20px; text-align: center;">
+      <h3 style="margin-bottom: 15px; color: var(--accent-cyan);">Mutual Funds</h3>
+      <iframe width="100%" height="200" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"
+        src="https://www.youtube.com/embed/PbldLCsspgE?si=c6J0hJibnCvKxDNh" frameborder="0" allowfullscreen></iframe>
+      <button class="btn-glowing btn-primary" style="margin-top: 15px; padding: 8px 20px;"
+        onclick="window.location.href='https://www.indmoney.com/mutual-funds'">Invest Now</button>
+    </div>
+
+    <!-- Crypto -->
+    <div class="glass-panel" style="padding: 20px; text-align: center;">
+      <h3 style="margin-bottom: 15px; color: var(--accent-cyan);">Cryptocurrency</h3>
+      <iframe width="100%" height="200" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"
+        src="https://www.youtube.com/embed/rYQgy8QDEBI?si=fMChiTY2ZVkXtQNm" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <!-- Income Tax -->
+    <div class="glass-panel" style="padding: 20px; text-align: center;">
+      <h3 style="margin-bottom: 15px; color: var(--accent-cyan);">Income Tax</h3>
+      <iframe width="100%" height="200" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"
+        src="https://www.youtube.com/embed/A_JQK_k4Kyc?si=HgHOb2Y-xXV2JM3R" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <!-- Insurance -->
+    <div class="glass-panel" style="padding: 20px; text-align: center;">
+      <h3 style="margin-bottom: 15px; color: var(--accent-cyan);">Insurance</h3>
+      <iframe width="100%" height="200" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"
+        src="https://www.youtube.com/embed/uPqNNshSA9I?si=HPFVoNJmkt846EGx" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <!-- US Stocks -->
+    <div class="glass-panel" style="padding: 20px; text-align: center;">
+      <h3 style="margin-bottom: 15px; color: var(--accent-cyan);">US Stocks</h3>
+      <iframe width="100%" height="200" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"
+        src="https://www.youtube.com/embed/ZNSQV-ZjxXE?si=KwQzXo1iKsiXp7s0" frameborder="0" allowfullscreen></iframe>
+      <button class="btn-glowing btn-primary" style="margin-top: 15px; padding: 8px 20px;"
+        onclick="window.location.href='https://www.indmoney.com/us-stocks'">Invest Now</button>
+    </div>
+  </div>
+</div>
+
+<div class="section-container">
+  <h2 class="section-title">Top <span class="text-gradient">Podcasts</span></h2>
+  <div class="dashboard-grid" style="gap: 30px;">
+    <div class="glass-panel" style="padding: 20px;">
+      <iframe style="border-radius:12px"
+        src="https://open.spotify.com/embed/episode/2rSleYMOLiwZN6oCxALYcL?utm_source=generator" width="100%"
+        height="352" frameBorder="0" allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+    <div class="glass-panel" style="padding: 20px;">
+      <iframe style="border-radius:12px"
+        src="https://open.spotify.com/embed/episode/4UTOYCCP9pDVsj7Iu5pRT6?utm_source=generator" width="100%"
+        height="352" frameBorder="0" allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="section-container">
+  <h2 class="section-title">Recommended <span class="text-gradient">Books</span></h2>
+
+  <div class="dashboard-grid" style="gap: 30px;">
+    <div class="glass-panel"
+      style="display: flex; flex-direction: column; align-items: center; padding: 30px; text-align: center;">
+      <img src="https://m.media-amazon.com/images/I/71uCf5ujqFL._AC_UF894,1000_QL80_.jpg" alt="Investonomy"
+        style="height: 300px; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); margin-bottom: 20px;">
+      <h3 style="color: var(--accent-cyan);">Investonomy</h3>
+      <p style="color: var(--accent-gold); margin-bottom: 10px;">Pranjal Kamra</p>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">Empowering investors with modern value investing
+        principles and market insights.</p>
+    </div>
+
+    <div class="glass-panel"
+      style="display: flex; flex-direction: column; align-items: center; padding: 30px; text-align: center;">
+      <img src="https://m.media-amazon.com/images/I/91+t0Di07FL._AC_UF1000,1000_QL80_.jpg"
+        alt="The Intelligent Investor"
+        style="height: 300px; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); margin-bottom: 20px;">
+      <h3 style="color: var(--accent-cyan);">The Intelligent Investor</h3>
+      <p style="color: var(--accent-gold); margin-bottom: 10px;">Benjamin Graham</p>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">A classic guide to value investing, offering timeless
+        wisdom for analyzing stocks and making investment decisions based on fundamental analysis.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
